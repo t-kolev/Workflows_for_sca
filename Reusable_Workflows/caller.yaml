@@ -1,0 +1,6 @@
+name: Scans Caller
+
+jobs:
+  my-job:
+    # Importing a reusable workflow from another repository and branch
+    uses: t-kolev/sca_scanner/.github/workflows/caller.yaml@main
