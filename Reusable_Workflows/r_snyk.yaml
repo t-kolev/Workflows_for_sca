@@ -1,6 +1,8 @@
 name: Snyk Security
 
 on:
+  schedule:
+    - cron: 
   workflow_call:
     inputs:
       secrets: 
@@ -36,7 +38,6 @@ jobs:
 
       - name: Snyk Code test
         run: snyk test --all-projects --sarif > snyk-code.sarif || true
-
 
       - name: Save the json file vulnerability report
         uses: actions/upload-artifact@master
